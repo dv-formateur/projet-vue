@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     <img alt="Vue logo" src="../assets/logo.png" />
-    <HelloWorld msg="Test View Automatic Deploy with Github Actions" />
+    <HelloWorld msg="Test Vue Automatic Deploy with Github Actions" />
   </div>
 </template>
 
