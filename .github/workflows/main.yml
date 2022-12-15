@@ -1,22 +1,14 @@
-name: CI
-on:
-  push:
-    branches: [master]
-  pull_request:
-    branches: [master]
+name: Build Vue
+on: [push]
 jobs:
-  build:
+  build_vue:
     runs-on: ubuntu-latest
+    name: Build Vue
     steps:
       - uses: actions/checkout@v2
-      - uses: actions/setup-node@v1
+      - id: Build-Vue
+        uses: xRealNeon/VuePagesAction@1.0.1
         with:
-          node-version: "10.x"
-      - run: npm install
-      - run: npm run build
-      - name: Deploy 🚀
-        uses: JamesIves/github-pages-deploy-action@releases/v3
-        with:
-          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-          BRANCH: gh-pages
-          FOLDER: dist
+          username: "dv-formateur"
+          reponame: "projet-vue"
+          token: ${{ secrets.GITHUB_TOKEN }} # Leave this line unchanged
